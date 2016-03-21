@@ -1,0 +1,10 @@
+<h2>Añadir tareas</h2>
+<p>Se van a cargar las siguientes tareas en la tarea "<%= @tarea.subject %>"</p>
+<ul>
+<% @project.issues.each do |tarea| %>
+<li><%= tarea.subject %></li>
+<% end %>
+</ul>
+<%= button_to 'Continuar', {:controller => 'controlador', :action=> 'completar_anadir_tareas', :id => @tarea.id}%>
+<%= link_to 'Volver', {:controller => 'issues', :action => 'show', :id =>1} %>
+

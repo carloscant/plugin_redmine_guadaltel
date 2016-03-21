@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>Proyecto plantilla tareas</th>
+    <td>
+    <select id="settings_project_id" name="settings[project_id]" >
+    <% Project.all.each do |project| %>
+    	<option <%= ( settings['project_id'] == project.id.to_s ? 'selected' : '' ) %> value="<%= project.id %>"><%= project.name %></option>
+    <% end %>
+    </select>
+    </td>
+  </tr> 
+</table>
